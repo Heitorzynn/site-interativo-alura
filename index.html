@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB; /* Cor do fundo: azul claro */
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #87CEEB; /* Fundo azul claro */
+        }
+
+        /* Estilo da imagem */
+        #image-container {
+            background-color: white;
+            border: 3px solid #000;
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #333;
+        }
+
+        /* Estilo do texto */
+        #history {
+            background-color: #D3D3D3; /* Fundo cinza claro */
+            border: 2px solid #000;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            min-height: 100px;
+        }
+
+        /* Estilo dos botões */
+        .button-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .choice-button {
+            background-color: #D3D3D3;
+            border: 2px solid #000;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .choice-button:hover {
+            background-color: #A9A9A9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Container da Imagem -->
+        <div id="image-container">
+            Imagem
+        </div>
+
+        <!-- Texto da História -->
+        <div id="history">
+            <p>O jovem herói Luca partiu em uma jornada para salvar sua vila da crise. Ele encontrou um antigo mapa que levava a um tesouro perdido. Três caminhos se apresentavam: um pela Floresta Sombria, outro pela Montanha do Trovão, e o terceiro pela Cidade Abandonada. Sua escolha definiria o destino de sua vila e seu próprio futuro...</p>
+        </div>
+
+        <!-- Botões de Escolha -->
+        <div class="button-container">
+            <button class="choice-button" onclick="showEnding(1)">Escolha 1</button>
+            <button class="choice-button" onclick="showEnding(2)">Escolha 2</button>
+            <button class="choice-button" onclick="showEnding(3)">Escolha 3</button>
+        </div>
+    </div>
+
+    <script>
+        function showEnding(choice) {
+            const historyElement = document.getElementById('history');
+            const imageContainer = document.getElementById('image-container');
+            
+            if (choice === 1) {
+                historyElement.innerHTML = "<p>Luca corajosamente escolheu o caminho da Floresta Sombria. Lá, ele encontrou o guardião da natureza, que o levou a um tesouro mágico. Com esse poder, ele curou sua vila e trouxe prosperidade para todos. Luca foi celebrado como o grande salvador, e sua história ecoou por gerações.</p>";
+                imageContainer.innerHTML = "<img src='floresta.jpg' alt='Floresta Sombria' style='width:100%; height:100%;'>";
+            } else if (choice === 2) {
+                historyElement.innerHTML = "<p>Luca escolheu escalar a Montanha do Trovão, mas as tempestades e o terreno traiçoeiro o venceram. Em meio à neve e raios, ele foi derrotado pela montanha. Sua vila jamais soube o que realmente aconteceu com ele, e sua história terminou em silêncio.</p>";
+                imageContainer.innerHTML = "<img src='montanha.jpg' alt='Montanha do Trovão' style='width:100%; height:100%;'>";
+            } else if (choice === 3) {
+                historyElement.innerHTML = "<p>Luca entrou na Cidade Abandonada, onde não encontrou tesouros, mas descobriu segredos e sabedoria sobre civilizações antigas. Ele voltou à sua vila sem riquezas, mas com o conhecimento de tempos esquecidos. Sua jornada não o fez herói, mas trouxe lições importantes para a sua vida.</p>";
+                imageContainer.innerHTML = "<img src='cidade.jpg' alt='Cidade Abandonada' style='width:100%; height:100%;'>";
+            }
+        }
+    </script>
+
+</body>
+</html>
